@@ -333,8 +333,6 @@ public class ChartViewBase: NSUIView, ChartDataProvider, AnimatorDelegate
             
             var y = (frame.height - textHeight) / 2.0
             
-            CGContextSetStrokeColorWithColor(context, noDataTextColor.CGColor)
-            
             if hasText
             {
                 ChartUtils.drawText(
@@ -342,14 +340,14 @@ public class ChartViewBase: NSUIView, ChartDataProvider, AnimatorDelegate
                     text: noDataText,
                     point: CGPoint(x: frame.width / 2.0, y: y),
                     align: .Center,
-                    attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: infoTextColor]
+                    attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: noDataTextColor]
                 )
                 y = y + infoFont.lineHeight
             }
             
             if (noDataTextDescription != nil && (noDataTextDescription!).characters.count > 0)
             {
-                ChartUtils.drawText(context: context, text: noDataTextDescription!, point: CGPoint(x: frame.width / 2.0, y: y), align: .Center, attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: infoTextColor])
+                ChartUtils.drawText(context: context, text: noDataTextDescription!, point: CGPoint(x: frame.width / 2.0, y: y), align: .Center, attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: noDataTextColor])
             }
             
             return
