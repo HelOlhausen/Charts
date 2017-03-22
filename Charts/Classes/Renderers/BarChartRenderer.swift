@@ -407,12 +407,13 @@ public class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                         {
                             break
                         }
-                        
-                        if !viewPortHandler.isInBoundsY(rect.origin.y)
-                            || !viewPortHandler.isInBoundsLeft(x)
-                        {
-                            continue
-                        }
+
+//                         Always redraw                        
+//                         if !viewPortHandler.isInBoundsY(rect.origin.y)
+//                             || !viewPortHandler.isInBoundsLeft(x)
+//                         {
+//                             continue
+//                         }
                         
                         let val = e.y
                         
@@ -455,13 +456,13 @@ public class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                             {
                                 break
                             }
-//                             
-//                             Always redraw
-//                             if !viewPortHandler.isInBoundsY(rect.origin.y)
-//                                 || !viewPortHandler.isInBoundsLeft(x)
-//                             {
-//                                 continue
-//                             }
+                            
+
+                            if !viewPortHandler.isInBoundsY(rect.origin.y)
+                                || !viewPortHandler.isInBoundsLeft(x)
+                            {
+                                continue
+                            }
                             
                             drawValue(
                                 context: context,
