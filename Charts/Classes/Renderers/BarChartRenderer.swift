@@ -455,12 +455,13 @@ public class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                             {
                                 break
                             }
-                            
-                            if !viewPortHandler.isInBoundsY(rect.origin.y)
-                                || !viewPortHandler.isInBoundsLeft(x)
-                            {
-                                continue
-                            }
+//                             
+//                             Always redraw
+//                             if !viewPortHandler.isInBoundsY(rect.origin.y)
+//                                 || !viewPortHandler.isInBoundsLeft(x)
+//                             {
+//                                 continue
+//                             }
                             
                             drawValue(
                                 context: context,
