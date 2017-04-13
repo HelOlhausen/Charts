@@ -350,20 +350,21 @@ public class HorizontalBarChartRenderer: BarChartRenderer
                         
                         let y = rect.origin.y + rect.size.height / 2.0
                         
-                        if !viewPortHandler.isInBoundsTop(rect.origin.y)
-                        {
-                            break
-                        }
+                        // Next is commented because its needed to redraw every time
+//                         if !viewPortHandler.isInBoundsTop(rect.origin.y)
+//                         {
+//                             break
+//                         }
                         
-                        if !viewPortHandler.isInBoundsX(rect.origin.x)
-                        {
-                            continue
-                        }
+//                         if !viewPortHandler.isInBoundsX(rect.origin.x)
+//                         {
+//                             continue
+//                         }
                         
-                        if !viewPortHandler.isInBoundsBottom(rect.origin.y)
-                        {
-                            continue
-                        }
+//                         if !viewPortHandler.isInBoundsBottom(rect.origin.y)
+//                         {
+//                             continue
+//                         }
                         
                         let val = e.y
                         let valueText = formatter.stringForValue(
@@ -386,8 +387,7 @@ public class HorizontalBarChartRenderer: BarChartRenderer
                         drawValue(
                             context: context,
                             value: valueText,
-                            xPos: (rect.origin.x + rect.size.width)
-                                + (val >= 0.0 ? posOffset : negOffset),
+                            xPos: val >= 0.0 ? (rect.origin.x + rect.size.width) + posOffset : rect.origin.x + negOffset,
                             yPos: y + yOffset,
                             font: valueFont,
                             align: textAlign,
